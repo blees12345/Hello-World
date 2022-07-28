@@ -52,7 +52,7 @@ function MyComponent() {
 	}
 
 
-
+// 
 	return isLoaded ? (
 		<>
 			<GoogleMap
