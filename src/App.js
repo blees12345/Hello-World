@@ -11,20 +11,20 @@ import { useState } from 'react';
 
 function App() {
 	function Storage() {
-		// Similar to useState but first arg is key to the value in local storage.
-		const [name, setName] = useLocalStorage('name', 'Bob');
+
+		const [name, setCountry] = useLocalStorage('name', 'country');
 		return (
 			<div>
 				<input
 					type='text'
-					placeholder='Enter your name'
+					placeholder='Enter your country'
 					value={name}
-					onChange={(e) => setName(e.target.value)}
+					onChange={(e) => setCountry(e.target.value)}
 				/>
 			</div>
 		);
 	}
-	// Hook
+
 	function useLocalStorage(key, initialValue) {
 		const [storedValue, setStoredValue] = useState(() => {
 			if (typeof window === 'undefined') {
