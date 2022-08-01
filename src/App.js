@@ -11,7 +11,6 @@ import { useState } from 'react';
 
 function App() {
 	function Storage() {
-
 		const [name, setCountry] = useLocalStorage('name', 'country');
 		return (
 			<div>
