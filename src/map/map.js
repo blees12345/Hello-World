@@ -2,7 +2,6 @@ import React, { useState, Fragment } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Geocode from 'react-geocode';
 
 function MyComponent() {
 	const [zoom] = useState(2.7);
@@ -12,9 +11,8 @@ function MyComponent() {
 	});
 	const { isLoaded, loadError } = useJsApiLoader({
 		id: 'google-map-script',
-		googleMapsApiKey: 'AIzaSyDhQrJh-xh1tjc1yA9Oma4BveFGMPkGeKs',
+		googleMapsApiKey: process.env.REACT_APP_API_KEY,
 	});
-	Geocode.setApiKey('AIzaSyDhQrJh-xh1tjc1yA9Oma4BveFGMPkGeKs');
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -72,15 +70,16 @@ function MyComponent() {
 					height: '80vh',
 					width: '100%',
 				}}>
-				{mapMarkerShow?.map((place) => (
-					<Marker
-						position={place.pos}
-						draggable={false}
-					/>
+				{mapMarkerShow?.map((place, index) => (
+						<Marker
+							key={index}
+							position={place.pos}
+							draggable={false}
+						/>
 				))}
 			</GoogleMap>
 			<Button variant='primary' onClick={handleShow}>
-				Launch demo modal
+				Modal
 			</Button>
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
