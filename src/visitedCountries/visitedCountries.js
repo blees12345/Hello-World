@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-function VisitedCountries(props) {
-    const [userData, setUserData] = useState('default user data');
-
+function VisitedCountries() {
+    const [userData, setUserData] = useState([]);
+    console.log('userData', userData);
     useEffect(() => {
         function checkUserData() {
-            const item = localStorage.getItem('mapMarker');
+            const item = JSON.parse(localStorage.getItem('mapMarker'));
+            console.log('item', item);
             if (item) {
                 setUserData(item);
             } else {
@@ -13,13 +14,14 @@ function VisitedCountries(props) {
             }
         }
         checkUserData();
-        window.addEventListener('storage', checkUserData);
-        return () => {
-            window.removeEventListener('storage', checkUserData);
-        };
     }, []);
-    return (
-        <h2>{userData}</h2>
+    return userData[0] ? (
+        <>
+            <h2>Lat: {userData[0].pos.lat}</h2>
+            <h2>Long: {userData[0].pos.lng}</h2>
+        </>
+    ) : (
+        null
     );
 }
 
