@@ -75,7 +75,7 @@ function MyComponent() {
 				{mapMarkerShow?.map((place) => (
 					<Marker
 						position={place.pos}
-						draggable={true} // should be false, latlng does not change when dragged
+						draggable={false}
 					/>
 				))}
 			</GoogleMap>
