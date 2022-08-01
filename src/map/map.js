@@ -20,13 +20,14 @@ function MyComponent() {
 	const handleShow = () => setShow(true);
 	const [clickedLatLng, setClickedLatLng] = useState(null);
 	const [mapMarker, setMapMarker] = useState([]);
+
 	let mapMarkerShow = [];
 	let getMapMarkerShow = localStorage.getItem('mapMarker');
-	
+
 	if (typeof getMapMarkerShow == 'string') {
 		mapMarkerShow = JSON.parse(getMapMarkerShow);
 	}
-	console.log("mapMarkerShow", mapMarkerShow)
+	console.log('mapMarkerShow', mapMarkerShow);
 
 	function createObjLatLng(object) {
 		let objLatLng = {
@@ -37,7 +38,20 @@ function MyComponent() {
 		};
 		let newArr = [...mapMarker, objLatLng];
 		mapMarkerShow.push(objLatLng);
-		localStorage.setItem('mapMarker', JSON.stringify(mapMarkerShow))
+		localStorage.setItem('mapMarker', JSON.stringify(mapMarkerShow));
+		setMapMarker(newArr);
+	}
+
+	function undoMarker(object) {
+		let objLatLng = {
+			pos: {
+				lat: object.lat,
+				lng: object.lng,
+			},
+		};
+		let newArr = [...mapMarker, objLatLng];
+		mapMarkerShow.pop(objLatLng);
+		localStorage.setItem('mapMarker', JSON.stringify(mapMarkerShow));
 		setMapMarker(newArr);
 	}
 
@@ -58,9 +72,8 @@ function MyComponent() {
 					height: '80vh',
 					width: '100%',
 				}}>
-				{mapMarker?.map((place) => (
+				{mapMarkerShow?.map((place) => (
 					<Marker
-						key={place.id}
 						position={place.pos}
 						draggable={true} // should be false, latlng does not change when dragged
 					/>
@@ -88,6 +101,7 @@ function MyComponent() {
 					You clicked: {clickedLatLng.lat}, {clickedLatLng.lng}
 				</h3>
 			)}
+			<button onClick={undoMarker}>Undo</button>
 		</Fragment>
 	) : (
 		<></>

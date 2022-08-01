@@ -11,7 +11,6 @@ import { useState } from 'react';
 
 function App() {
 	function Storage() {
-
 		const [name, setCountry] = useLocalStorage('name', 'country');
 		return (
 			<div>
@@ -74,7 +73,7 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/body' element={<Body />} />
-					{/* <Route path='/visitedcountries' element={<VisitedCountries />} /> */}
+					<Route path='/visitedcountries' element={<VisitedCountries />} />
 					<Route path='/map' element={<Map />} />
 				</Routes>
 			</main>

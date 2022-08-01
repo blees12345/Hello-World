@@ -20,7 +20,7 @@ html {
 
 .nav-container {
   display: flex;
-  background: black;
+  background: none;
   flex-direction: column;
   align-items: center;
   width: 100%;
