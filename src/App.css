@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
 
 * {
   box-sizing: border-box;
@@ -17,33 +15,55 @@ html {
   height: 100vh;
 }
 
+.main {
+  padding-top: 100px;
+}
+
 .nav-container {
   display: flex;
-  background: none;
-  flex-direction: column;
+  background: #002c76;
   align-items: center;
   width: 100%;
   z-index: 500;
-  height: 155px;
+  height: 100px;
   position: fixed;
+  justify-content: center;
 }
 
-.link {
-  align-items: center;
-  font-size: 1.4rem;
-  padding-left: 3vw;
-  padding-right: 3vw;
-  padding-bottom: 10px;
-  color: rgba(170, 168, 165);
+.pic-lib-link {
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+.map-link, .visited-link {
+  color: rgba(49, 107, 135);
+  font-weight: 600;
+  font-size: 1.8em;
   text-decoration: none;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-family: 'Hind Siliguri', sans-serif;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Square Peg', cursive;
 }
 
-a {
-  color: rgba(171, 168, 166);
-  font-weight: 550;
+.map-link {
+  padding-right: 50px;
+}
+
+.visited-link {
+  padding-left: 50px;
+}
+
+.left-link, .right-link {
+  color: rgba(49, 107, 135);
+  font-weight: 600;
+  margin-top: 40px;
+  font-size: 1em;
+}
+
+.left-link:hover, .right-link:hover {
+  cursor: default
+}
+
+.map-link:hover, .visited-link:hover {
+  color: rgb(245, 245, 152);
 }
 
 .link-container {
@@ -52,16 +72,14 @@ a {
 
 .logo-container {
   width: auto;
-  height: 110px;
-  padding-top: 0;
-  padding-bottom: 20px
+  height: 4.6vmax;
+  margin-top: 15px;
 }
 
 .logo-title {
   color: white;
   font-size: 35px;
   padding: 15px;
-  font-family: 'Bad Script', cursive;
   font-family: 'Marck Script', cursive;
 }
 
