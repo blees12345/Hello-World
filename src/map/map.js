@@ -79,7 +79,7 @@ function MyComponent() {
 				))}
 			</GoogleMap>
 			<Button variant='primary' onClick={handleShow}>
-				Launch demo modal
+				Modal
 			</Button>
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
