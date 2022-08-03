@@ -1,6 +1,5 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './Home/HomeContainer';
-import Body from './Home/Body';
 import VisitedCountries from './visitedCountries/visitedCountries';
 import Map from './map/map';
 import Navbar from './Home/Navbar';
