@@ -1,0 +1,26 @@
+.map-container {
+    height: 1000px;
+    margin-top: 0px;
+    background: linear-gradient(rgba(152, 181, 236, 0.9), rgba(255, 255, 255, 0.9)), rgba(255, 255, 255, 0.9) url(shifaaz-shamoon-okVXy9tG3KY-unsplash.jpeg);
+}
+
+.main {
+    background-color: none;
+}
+
+.btn-map {
+    padding: 12px 32px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: white;
+    background: rgb(131, 166, 220, 0.7);
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px 0;
+}
+
+.btn:hover {
+    cursor: pointer;
+}

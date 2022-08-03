@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap');
+
+.main {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)), rgba(0, 0, 0, 0.55) url(spencer-davis-Ivwyqtw3PzU-unsplash.jpeg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+}
+
+.address{
+    display: flex;
+}
+
+.countries-list {
+    display: block;
+    font-weight: 100;
+    text-align: center;
+    color: white;
+    align-items: center;
+    font-family: 'Merienda', cursive;
+}
+
+.address {
+    margin-top: 30px;
+    font-weight: 600;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-top: 15vh;
+    text-align: center;
+    font-size: 65px;
+    margin-top: 30px;
+    font-weight: 600;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Prompt', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    margin-top: 50px;
+}
