@@ -20,7 +20,7 @@ function VisitedCountries() {
 	}, []);
 	console.log(userData);
 	const item = JSON.parse(localStorage.getItem('mapMarker'));
-	Geocode.setApiKey('AIzaSyDhQrJh-xh1tjc1yA9Oma4BveFGMPkGeKs');
+	Geocode.setApiKey(process.env.REACT_APP_API_MAP);
 	const [address, setAddress] = useState([]);
 	async function getAddresses() {
 		const results = [];
