@@ -53,7 +53,7 @@ function MyComponent() {
 		setMapMarker(newArr);
 	}
 
-	Geocode.setApiKey('AIzaSyDhQrJh-xh1tjc1yA9Oma4BveFGMPkGeKs');
+	Geocode.setApiKey(process.env.REACT_APP_API_MAP);
 	const item = JSON.parse(localStorage.getItem('mapMarker'));
 	const [address, setAddress] = useState([]);
 	async function getAddresses() {
