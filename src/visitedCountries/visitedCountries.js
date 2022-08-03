@@ -4,11 +4,9 @@ import './visitedCountries.css';
 
 function VisitedCountries() {
     const [userData, setUserData] = useState([]);
-    console.log('userData', userData);
     useEffect(() => {
         function checkUserData() {
             const item = JSON.parse(localStorage.getItem('mapMarker'));
-            console.log('item', item);
             if (item) {
                 setUserData(item);
             } else {
@@ -17,7 +15,6 @@ function VisitedCountries() {
         }
         checkUserData();
     }, []);
-    console.log(userData);
     const item = JSON.parse(localStorage.getItem('mapMarker'));
     Geocode.setApiKey('AIzaSyDhQrJh-xh1tjc1yA9Oma4BveFGMPkGeKs');
     const [address, setAddress] = useState([]);
@@ -31,7 +28,6 @@ function VisitedCountries() {
             results.push(response.results[0].formatted_address);
         }
         setAddress(results);
-        console.log(results);
     }
 
     useEffect(() => {
@@ -40,11 +36,13 @@ function VisitedCountries() {
 
     return address[0] ? (
         <section className='container'>
-            <h1 className='title'>Visited Countries</h1>
-            <div className='countries-list'>
-                {address.map((address) => (
-                    <div className='address'>{address}</div>
-                ))}
+            <div className='inner-container'>
+                <h1 className='title'>Visited Countries</h1>
+                <div className='countries-list'>
+                    {address.map((address) => (
+                        <div className='address'>{address}</div>
+                    ))}
+                </div>
             </div>
         </section>
     ) : null;

@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 .main {
-    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)), rgba(0, 0, 0, 0.55) url(spencer-davis-Ivwyqtw3PzU-unsplash.jpeg);
+    background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255,  0.45)), rgba(255, 255, 255, 0.55) url(spencer-davis-Ivwyqtw3PzU-unsplash.jpeg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
     height: 100vh;
+}
+
+.inner-container {
+    background: rgba(255, 255, 255, 0.75);
+    border: 2px solid grey;
+    border-radius: 15px;
+    align-items: center;;
+    box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.25);
 }
 
 .address{
@@ -16,11 +24,12 @@
 
 .countries-list {
     display: block;
-    font-weight: 100;
+    font-weight: 500;
     text-align: center;
-    color: white;
+    color: black;
     align-items: center;
-    font-family: 'Merienda', cursive;
+    font-family: 'Special Elite', cursive;
+    font-size: 2em;
 }
 
 .address {
@@ -32,16 +41,31 @@
 }
 
 .title {
-    margin-top: 15vh;
     text-align: center;
-    font-size: 65px;
     margin-top: 30px;
     font-weight: 600;
     align-items: center;
     display: flex;
     flex-direction: column;
-    color: white;
-    font-family: 'Prompt', sans-serif;
+    font-family: 'Koulen', cursive;
+    background-image: linear-gradient(
+        45deg,
+        #b02323d6 35%, 
+        #E16541 40%, 
+        #ee4e22 30%, 
+        #F18F43 45%, 
+        #da772c 50%, 
+        #a2c042 60%, 
+        #a0bd40 6%, 
+        #476098 80%, 
+        #5372b6 83.333%, 
+        #A7489B 83.333%);;
+    background-repeat: repeat;
+    color: transparent;
+	text-transform: uppercase;
+	font-size: 4.5em;
+	-webkit-background-clip: text;
+	background-clip: text;
 }
 
 .container {

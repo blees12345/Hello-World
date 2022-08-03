@@ -28,6 +28,7 @@ html {
   height: 135px;
   position: fixed;
   justify-content: center;
+  box-shadow: 2px black;
 }
 
 .pic-lib-link {
