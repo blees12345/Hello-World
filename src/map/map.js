@@ -7,6 +7,7 @@ import {
 } from '@react-google-maps/api';
 import Geocode from 'react-geocode';
 import './map.css';
+import Navbar from '../Home/Navbar';
 
 function MyComponent() {
 	const [zoom] = useState(2.7);
@@ -78,6 +79,7 @@ function MyComponent() {
 	console.log('mapMarkerShow', mapMarkerShow);
 	return isLoaded && address ? (
 		<Fragment>
+			<Navbar/>
 			<GoogleMap
 				onClick={(e) => {
 					setClickedLatLng(e.latLng.toJSON());

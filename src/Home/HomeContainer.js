@@ -1,20 +1,18 @@
 import React from 'react';
-import Header from './Header';
-import Body from './Body';
-import '../utilities/reset.css';
-import './HomeContainer.css';
+import Navbar from './Navbar';
+import Video from './Video';
+// import Header from './Header';
+// import Body from './Body';
+// import '../utilities/reset.css';
+// import './HomeContainer.css';
 
 function Home() {
-    return (
-        <div className="home-container">
-            <div className="header-container">
-                <Header />
-            </div>
-            <div className="body-container">
-                <Body />
-            </div>
-        </div>
-    );
+	return (
+		<div>
+			<Navbar />
+			<Video />
+		</div>
+	);
 }
 
 export default Home;
