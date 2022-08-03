@@ -1,7 +1,12 @@
-import React, { useState, Fragment } from 'react';
-import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React, { useState, Fragment, useEffect } from 'react';
+import {
+	GoogleMap,
+	Marker,
+	useJsApiLoader,
+	InfoWindow,
+} from '@react-google-maps/api';
+import Geocode from 'react-geocode';
+import './map.css';
 
 function MyComponent() {
 	const [zoom] = useState(2.7);
@@ -13,22 +18,18 @@ function MyComponent() {
 		id: 'google-map-script',
 		googleMapsApiKey: process.env.REACT_APP_API_KEY,
 	});
-	const [show, setShow] = useState(false);
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
 	const [clickedLatLng, setClickedLatLng] = useState(null);
 	const [mapMarker, setMapMarker] = useState([]);
-
+	const [infoWindow, setInfoWindow] = useState('');
 	let mapMarkerShow = [];
 	let getMapMarkerShow = localStorage.getItem('mapMarker');
 
 	if (typeof getMapMarkerShow == 'string') {
 		mapMarkerShow = JSON.parse(getMapMarkerShow);
 	}
-	console.log('mapMarkerShow', mapMarkerShow);
-
+	let objLatLng;
 	function createObjLatLng(object) {
-		let objLatLng = {
+		objLatLng = {
 			pos: {
 				lat: object.lat,
 				lng: object.lng,
@@ -39,9 +40,8 @@ function MyComponent() {
 		localStorage.setItem('mapMarker', JSON.stringify(mapMarkerShow));
 		setMapMarker(newArr);
 	}
-
 	function undoMarker(object) {
-		let objLatLng = {
+		objLatLng = {
 			pos: {
 				lat: object.lat,
 				lng: object.lng,
@@ -53,11 +53,30 @@ function MyComponent() {
 		setMapMarker(newArr);
 	}
 
+	Geocode.setApiKey(process.env.REACT_APP_API_MAP);
+	const item = JSON.parse(localStorage.getItem('mapMarker'));
+	const [address, setAddress] = useState([]);
+	async function getAddresses() {
+		const results = [];
+		for (let i = 0; i < item.length; i++) {
+			const response = await Geocode.fromLatLng(
+				item[i].pos.lat,
+				item[i].pos.lng
+			);
+			results.push(response.results[0].formatted_address);
+		}
+		setAddress(results);
+		console.log(results);
+	}
+
+	useEffect(() => {
+		getAddresses();
+	}, []);
 	if (loadError) {
 		return <div>Oops i did it again</div>;
 	}
-
-	return isLoaded ? (
+	console.log('mapMarkerShow', mapMarkerShow);
+	return isLoaded && address ? (
 		<Fragment>
 			<GoogleMap
 				onClick={(e) => {
@@ -71,30 +90,21 @@ function MyComponent() {
 					width: '100%',
 				}}>
 				{mapMarkerShow?.map((place, index) => (
-						<Marker
-							key={index}
-							position={place.pos}
-							draggable={false}
-						/>
+					<Marker
+						key={index}
+						position={place.pos}
+						draggable={false}
+						onClick={() => {
+							setInfoWindow(index);
+						}}>
+						{infoWindow === index && (
+							<InfoWindow>
+								<h3 className='info-window'>{address[index]}</h3>
+							</InfoWindow>
+						)}
+					</Marker>
 				))}
 			</GoogleMap>
-			<Button variant='primary' onClick={handleShow}>
-				Modal
-			</Button>
-			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
-					<Modal.Title>Modal heading</Modal.Title>
-				</Modal.Header>
-				<Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-				<Modal.Footer>
-					<Button variant='secondary' onClick={handleClose}>
-						Close
-					</Button>
-					<Button variant='primary' onClick={handleClose}>
-						Save Changes
-					</Button>
-				</Modal.Footer>
-			</Modal>
 			{clickedLatLng && (
 				<h3>
 					You clicked: {clickedLatLng.lat}, {clickedLatLng.lng}
