@@ -22,7 +22,7 @@ In your terminal, you will need to install the following dependencies:
 
 - `npm install`
 You will need 2 Google API keys.
-1 key for Google maps and another for the Goecode.
+1 key for Google maps and another one for the Goecode.
 
 ### `npm start`
 
