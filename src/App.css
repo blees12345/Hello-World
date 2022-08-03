@@ -11,12 +11,12 @@
 }
 
 html {
-  background-color: white;
+  background-color: black;
   height: 100vh;
 }
 
 .main {
-  padding-top: 100px;
+  padding-top: 125px;
 }
 
 .nav-container {
@@ -25,7 +25,7 @@ html {
   align-items: center;
   width: 100%;
   z-index: 500;
-  height: 100px;
+  height: 135px;
   position: fixed;
   justify-content: center;
 }
@@ -56,6 +56,10 @@ html {
   font-weight: 600;
   margin-top: 40px;
   font-size: 1em;
+}
+
+.left-link {
+  margin-left: -50px;
 }
 
 .left-link:hover, .right-link:hover {
@@ -96,5 +100,41 @@ html {
 
   .link {
     font-size: 1.25rem;
+  }
+
+  .map-link, .visited-link {
+    display: flex;
+    color: rgba(49, 107, 135);
+    font-weight: 600;
+    font-size: 1.8em;
+    text-decoration: none;
+    font-family: 'Square Peg', cursive;
+    text-align: center;
+    margin: 50px;
+    margin-left: -25px;
+  }
+  .left-link, .right-link {
+    font-weight: 600;
+    margin-top: 60px;
+    font-size: 1em;
+    padding-right: 50px;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #000;
+  }
+  .logo-container {
+    margin-left: -50px;
+    margin-top: 65px;
+    display: none;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    z-index: 500;
+    height: 125px;
   }
 }

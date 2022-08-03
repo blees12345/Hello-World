@@ -53,7 +53,7 @@ function MyComponent() {
 		setMapMarker(newArr);
 	}
 
-	Geocode.setApiKey(process.env.REACT_APP_API_MAP);
+	Geocode.setApiKey('AIzaSyDhQrJh-xh1tjc1yA9Oma4BveFGMPkGeKs');
 	const item = JSON.parse(localStorage.getItem('mapMarker'));
 	const [address, setAddress] = useState([]);
 	async function getAddresses() {
@@ -77,41 +77,44 @@ function MyComponent() {
 	}
 	console.log('mapMarkerShow', mapMarkerShow);
 	return isLoaded && address ? (
-		<Fragment>
-			<GoogleMap
-				onClick={(e) => {
-					setClickedLatLng(e.latLng.toJSON());
-					createObjLatLng(e.latLng.toJSON());
-				}}
-				center={center}
-				zoom={zoom}
-				mapContainerStyle={{
-					height: '80vh',
-					width: '100%',
-				}}>
-				{mapMarkerShow?.map((place, index) => (
-					<Marker
-						key={index}
-						position={place.pos}
-						draggable={false}
-						onClick={() => {
-							setInfoWindow(index);
-						}}>
-						{infoWindow === index && (
-							<InfoWindow>
-								<h3 className='info-window'>{address[index]}</h3>
-							</InfoWindow>
-						)}
-					</Marker>
-				))}
-			</GoogleMap>
-			{clickedLatLng && (
-				<h3>
-					You clicked: {clickedLatLng.lat}, {clickedLatLng.lng}
-				</h3>
-			)}
-			<button onClick={undoMarker}>Undo</button>
-		</Fragment>
+		<section className="map-container">
+			<Fragment>
+				<GoogleMap
+					className="map-container"
+					onClick={(e) => {
+						setClickedLatLng(e.latLng.toJSON());
+						createObjLatLng(e.latLng.toJSON());
+					}}
+					center={center}
+					zoom={zoom}
+					mapContainerStyle={{
+						height: '80vh',
+						width: '100%',
+					}}>
+					{mapMarkerShow?.map((place, index) => (
+						<Marker
+							key={index}
+							position={place.pos}
+							draggable={false}
+							onClick={() => {
+								setInfoWindow(index);
+							}}>
+							{infoWindow === index && (
+								<InfoWindow>
+									<h3 className='info-window'>{address[index]}</h3>
+								</InfoWindow>
+							)}
+						</Marker>
+					))}
+				</GoogleMap>
+				{clickedLatLng && (
+					<h3>
+						You clicked: {clickedLatLng.lat}, {clickedLatLng.lng}
+					</h3>
+				)}
+				<button className='btn-map' onClick={undoMarker}>Undo</button>
+			</Fragment>
+		</section>
 	) : (
 		<></>
 	);

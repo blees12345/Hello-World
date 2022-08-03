@@ -1,12 +1,12 @@
 import './Body.css';
+import spaceVideo from './Rotation of The Planet Earth.mp4';
 
 function Body() {
     return (
             <div className="pic-container">
-                <article className="pic-container-inner">
-                    <header className="pic-header">Hello World</header>
-                    <p className="pic-explanation">Description</p>
-                </article>
+                <video autoPlay loop muted className='video-container'>
+                    <source src={spaceVideo} type='video/mp4' className="video" />
+            </video>
             </div>
     );
 }
