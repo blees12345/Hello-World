@@ -1,5 +1,6 @@
 # Hello and welcome to Hello World
-<img g">
+![Screen Shot 2022-08-03 at 9 00 27 AM](https://user-images.githubusercontent.com/74582512/182655998-55985a44-5676-4e29-9ca0-3f49efcb76a2.png)
+
 
 Here you will find...
 
@@ -20,8 +21,8 @@ Within your folder terminal, enter 'git clone' followed by the link you copied a
 In your terminal, you will need to install the following dependencies:
 
 - `npm install`
-
-API Key
+You will need 2 Google API keys.
+1 key for Google maps and another for the Goecode.
 
 ### `npm start`
 
