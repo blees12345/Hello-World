@@ -107,11 +107,6 @@ function MyComponent() {
 						</Marker>
 					))}
 				</GoogleMap>
-				{clickedLatLng && (
-					<h3>
-						You clicked: {clickedLatLng.lat}, {clickedLatLng.lng}
-					</h3>
-				)}
 				<button className='btn-map' onClick={undoMarker}>Undo</button>
 			</Fragment>
 		</section>
