@@ -11,7 +11,7 @@ function Video() {
 			</video>
 			<div className='content'>
 				<h1>Hello World</h1>
-				<p></p>
+				<br></br>
 				<div>
 					<Link to='/map' className='btn'>
 						Get Started
