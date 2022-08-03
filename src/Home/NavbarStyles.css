@@ -1,0 +1,27 @@
+.header {
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 10;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-menu li {
+    padding: 0 10px;
+    text-shadow: 1px 1px black;
+}
+
+.nav-menu a {
+    font-size: 20px;
+}
+
+.hello {
+    text-shadow: 1px 1px black;
+}
