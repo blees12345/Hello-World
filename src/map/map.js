@@ -47,10 +47,10 @@ function MyComponent() {
 				lng: object.lng,
 			},
 		};
-		let newArr = [...mapMarker, objLatLng];
+		let newArr2 = [...mapMarker, objLatLng];
 		mapMarkerShow.pop(objLatLng);
 		localStorage.setItem('mapMarker', JSON.stringify(mapMarkerShow));
-		setMapMarker(newArr);
+		setMapMarker(newArr2);
 	}
 
 	Geocode.setApiKey(process.env.REACT_APP_API_MAP);
