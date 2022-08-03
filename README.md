@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Hello and welcome to Hello World
+<img g">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Here you will find...
 
-## Available Scripts
+## Getting Started/Installation Instructions:
+### `Code`
 
-In the project directory, you can run:
+Follow this link:
+[Website Link](https://hello-world-travel.netlify.app/), 
+[Github Link](https://github.com/blees12345/Hello-World)</br>
+
+### `git clone`
+
+
+Within your folder terminal, enter 'git clone' followed by the link you copied and then press 'enter'.
+
+### Install Dependencies:
+
+In your terminal, you will need to install the following dependencies:
+
+- `npm install`
+
+API Key
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Next you will need to run your terminal by using the `npm start` command. 
+Runs the app in the development mode.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Technologies Used:
 
-### `npm test`
+- React
+- React Router 
+- Netlify
+- Local storage
+## Features and Description:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- This application displays a map that will be interactive by dropping pins on the map.
+- Each pin will be saved in local storage and you are able to view all of the pins you have dropped.
+- This application has, create, read, and delete functions for the pins.
+- This application is screen responsive so it works on most displays.
 
-### `npm run build`
+## Contribution Guidelines:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you would like to add any contributes, simply 'fork' the project on the Github page by clicking on the `fork` link in the upper right. From there, follow the steps above starting with copying the `code` link. Please feel free to identify any bugs, propose improvements, and if you have any additional questions or recommendations, please feel free to make an issue request to either github repository.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Credits: ###
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Nick Giggey [Github Link](https://github.com/nickgiggey)
+- Adrian Guia [Github Link](https://github.com/blees12345)
+- Alfredo Saenz [Github Link](https://github.com/alfredo-saenz)
+- Rabbi Hasan Sagar [Github Link](https://github.com/rhsagar94)
