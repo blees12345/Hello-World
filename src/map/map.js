@@ -66,7 +66,6 @@ function MyComponent() {
 			results.push(response.results[0].formatted_address);
 		}
 		setAddress(results);
-		console.log(results);
 	}
 
 	useEffect(() => {
@@ -75,7 +74,6 @@ function MyComponent() {
 	if (loadError) {
 		return <div>Oops i did it again</div>;
 	}
-	console.log('mapMarkerShow', mapMarkerShow);
 	return isLoaded && address ? (
 		<section className="map-container">
 			<Fragment>
